@@ -2,14 +2,36 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>POS</title>
+    <title>Power of Sun</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <h2>Команда героев</h2>
+
+    <div id="screen-auth" class="screen">
+        <h2>Вход в игру</h2>
+        <input type="text" id="login" placeholder="Логин">
+        <input type="password" id="pass" placeholder="Пароль">
+        <button onclick="goTo('screen-char-gen')">Войти</button>
     </div>
 
-    <script type="module" src="./src/main.js"></script>
+    <div id="screen-char-gen" class="screen hidden">
+        <h2>Создание персонажа</h2>
+        <div id="team-setup"></div>
+        <button onclick="startGame()">Начать приключение</button>
+    </div>
+
+    <div id="screen-world" class="screen hidden">
+        <h2>Карта мира</h2>
+        <div id="world-grid" class="grid"></div>
+        <div id="hud">Здоровье команды: <span id="hp-val">100</span></div>
+    </div>
+
+    <div id="screen-battle" class="screen hidden">
+        <h2>Битва!</h2>
+        <div id="battle-grid" class="grid"></div>
+        <div id="battle-log"></div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
